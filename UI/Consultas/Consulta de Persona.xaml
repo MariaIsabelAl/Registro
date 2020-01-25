@@ -1,0 +1,21 @@
+﻿<Window x:Name="ConsultaWindow" x:Class="Registro.UI.Consultas.Consulta_de_Persona"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Registro.UI.Consultas"
+        mc:Ignorable="d"
+        Title="Consulta de Persona" Height="500" Width="700" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+    <Grid x:Name="ConsultaGrid">
+        <DataGrid x:Name="ConsultaDataGrip" HorizontalAlignment="Center" Height="447" Margin="0,38,0,0" VerticalAlignment="Top" Width="698" SelectionChanged="DataGrid_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        <Label x:Name="FiltroLabel" Content="Filtro" HorizontalAlignment="Left" Height="30" Margin="4,2,0,0" VerticalAlignment="Top" Width="125" FontWeight="Bold"/>
+        <Label x:Name="CriterioLabel" Content="Criterio" HorizontalAlignment="Left" Height="33" Margin="248,0,0,0" VerticalAlignment="Top" Width="146" FontWeight="Bold"/>
+        <Button x:Name="ConsultarButton" Content="Consultar" HorizontalAlignment="Left" Height="32" Margin="507,1,0,0" VerticalAlignment="Top" Width="183" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="ConsultarButton_Click"/>
+        <ComboBox x:Name="FiltroComboBox" HorizontalAlignment="Left" Height="19" Margin="53,6,0,0" VerticalAlignment="Top" Width="189" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBox x:Name="CriterioTextBox" HorizontalAlignment="Left" Height="22" Margin="302,5,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="181" TextChanged="CriterioTextBox_TextChanged"/>
+
+
+
+
+    </Grid>
+</Window>

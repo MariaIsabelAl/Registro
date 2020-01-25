@@ -1,0 +1,15 @@
+﻿<Window x:Class="Registro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Registro"
+        mc:Ignorable="d"
+        Title="Menu" Height="200" Width="300" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+    <Grid x:Name="MenuGrid">
+        <Button x:Name="RegistroButton" Content="Registro" Height="32" Width="70" Margin="40,21,40,81" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="RegistroButton_Click"/>
+        <Button x:Name="ConsultaButton" Content="Consulta" Height="32" Width="70" Margin="39,69,41,33" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="ConsultaButton_Click"/>
+
+
+    </Grid>
+</Window>
