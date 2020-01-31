@@ -12,15 +12,15 @@ namespace Registro.BLL
     public class PersonasBll
     {
         ///Metodo guardar
-        public static bool Guardar(Personas p)
+        public static bool Guardar(Personas persona)
         {
             bool paso = false;
-            Contexto c = new Contexto();
+            Contexto contexto = new Contexto();
 
             try
             {
-                if (c.Personas.Add(p) != null)
-                    paso = c.SaveChanges() > 0;
+                if (contexto.Personas.Add(persona) != null)
+                    paso = contexto.SaveChanges() > 0;
             }
             catch(Exception)
             {
@@ -28,29 +28,22 @@ namespace Registro.BLL
             }
             finally
             {
-                c.Dispose();
+                contexto.Dispose();
             }
 
             return paso;
         }///fin
 
 
-        public static bool Modificar(Personas p)//modificar
+        public static bool Modificar(Personas persona)//modificar
         {
             bool paso = false;
-            Contexto c = new Contexto();
+            Contexto contexto = new Contexto();
 
             try
             {
-                var Anterior = c.Personas.Find(p.PersonaID);
-                foreach(var item in Anterior.Telefono)
-                {
-                    if (!p.Telefono.Exists(d => d.ID == item.ID))
-                        c.Entry(item).State = EntityState.Deleted;
-                }
-
-                c.Entry(p).State = EntityState.Modified;
-                paso = (c.SaveChanges() > 0);
+                contexto.Entry(persona).State = EntityState.Modified;
+                paso = (contexto.SaveChanges() > 0);
             }
             catch (Exception)
             {
@@ -58,7 +51,7 @@ namespace Registro.BLL
             }
             finally
             {
-                c.Dispose();
+                contexto.Dispose();
             }
 
             return paso;
@@ -68,14 +61,14 @@ namespace Registro.BLL
         public static bool Eliminar(int id)//                    eliminar
         {
             bool paso = false;
-            Contexto c = new Contexto();
+            Contexto contexto = new Contexto();
 
             try
             {
-                var eliminar = c.Personas.Find(id);
-                c.Entry(eliminar).State = System.Data.Entity.EntityState.Deleted;
+                var eliminar = contexto.Personas.Find(id);
+                contexto.Entry(eliminar).State =  EntityState.Deleted;
 
-                paso = (c.SaveChanges() > 0);
+                paso = (contexto.SaveChanges() > 0);
             }
             catch
             {
@@ -83,7 +76,7 @@ namespace Registro.BLL
             }
             finally
             {
-                c.Dispose();
+                contexto.Dispose();
             }
 
             return paso;
@@ -92,13 +85,13 @@ namespace Registro.BLL
 
         public static Personas Buscar(int id)//            buscar por id
         {
-            Contexto c = new Contexto();
-            Personas p = new Personas();
+            Contexto contexto = new Contexto();
+            Personas persona = new Personas();
 
             try
             {
-                p = c.Personas.Find(id);
-                p.Telefono.Count();
+                persona = contexto.Personas.Find(id);
+                
             }
             catch
             {
@@ -106,19 +99,19 @@ namespace Registro.BLL
             }
             finally
             {
-                c.Dispose();
+                contexto.Dispose();
             }
 
-            return paso;
+            return persona;
         }//                       fin
 
-        public static List<Personas> GetList(Expression<Func<Personas,bool>> p) //               listar
+        public static List<Personas> GetList(Expression<Func<Personas,bool>> persona) //               listar
         {
             List<Personas> lista = new List<Personas>();
-            Contexto c = new Contexto();
+            Contexto contexto = new Contexto();
             try
             {
-                lista = c.Personas.Where(p).ToList();
+                lista = contexto.Personas.Where(persona).ToList();
             }
             catch
             {
@@ -126,7 +119,7 @@ namespace Registro.BLL
             }
             finally
             {
-                c.Dispose();
+                contexto.Dispose();
             }
 
             return lista;

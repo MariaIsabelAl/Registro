@@ -18,7 +18,6 @@ namespace Registro
         private void RegistroButton_Click(object sender, RoutedEventArgs e)
         {
             rPersonas rp = new rPersonas();
-            
             rp.Show();
         }
 
@@ -26,6 +25,12 @@ namespace Registro
         {
             Consulta_de_Persona c = new Consulta_de_Persona();
             c.Show();
+        }
+
+        private void InscripcionButton_Click(object sender, RoutedEventArgs e)
+        {
+            rInscripciones ri = new rInscripciones();
+            ri.Show();
         }
     }
 }

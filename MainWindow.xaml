@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Registro"
         mc:Ignorable="d"
-        Title="Menu" Height="200" Width="300" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
-    <Grid x:Name="MenuGrid">
-        <Button x:Name="RegistroButton" Content="Registro" Height="32" Width="70" Margin="40,21,40,81" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="RegistroButton_Click"/>
-        <Button x:Name="ConsultaButton" Content="Consulta" Height="32" Width="70" Margin="39,69,41,33" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="ConsultaButton_Click"/>
+        Title="Menu de Registro Persona" Height="200" Width="350" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+    <Grid x:Name="MenuGrid" HorizontalAlignment="Center" VerticalAlignment="Top" Height="200" Width="400">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="23*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="RegistroButton" Content="Registrar" Height="35" Width="70" Margin="165,14,0,0" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="RegistroButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="ConsultaButton" Content="Consultar" Height="35" Width="70" Margin="165,118,0,0" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="ConsultaButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="InscripcionButton" Content="Inscribir" HorizontalAlignment="Left" Height="35" Margin="165,64,0,0" VerticalAlignment="Top" Width="70" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="InscripcionButton_Click"/>
 
 
     </Grid>

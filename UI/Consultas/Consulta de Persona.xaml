@@ -7,12 +7,18 @@
         mc:Ignorable="d"
         Title="Consulta de Persona" Height="500" Width="700" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
     <Grid x:Name="ConsultaGrid">
-        <DataGrid x:Name="ConsultaDataGrip" HorizontalAlignment="Center" Height="447" Margin="0,38,0,0" VerticalAlignment="Top" Width="698" SelectionChanged="DataGrid_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-        <Label x:Name="FiltroLabel" Content="Filtro" HorizontalAlignment="Left" Height="30" Margin="4,2,0,0" VerticalAlignment="Top" Width="125" FontWeight="Bold"/>
+        <DataGrid x:Name="ConsultaDataGrip" HorizontalAlignment="Center" Height="410" Margin="0,38,0,0" VerticalAlignment="Top" Width="650"  Background="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+        <Label x:Name="FiltroLabel" Content="Filtro" HorizontalAlignment="Left" Height="30" Margin="8,2,0,0" VerticalAlignment="Top" Width="125" FontWeight="Bold"/>
         <Label x:Name="CriterioLabel" Content="Criterio" HorizontalAlignment="Left" Height="33" Margin="248,0,0,0" VerticalAlignment="Top" Width="146" FontWeight="Bold"/>
-        <Button x:Name="ConsultarButton" Content="Consultar" HorizontalAlignment="Left" Height="32" Margin="507,1,0,0" VerticalAlignment="Top" Width="183" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="ConsultarButton_Click"/>
-        <ComboBox x:Name="FiltroComboBox" HorizontalAlignment="Left" Height="19" Margin="53,6,0,0" VerticalAlignment="Top" Width="189" SelectionChanged="ComboBox_SelectionChanged"/>
-        <TextBox x:Name="CriterioTextBox" HorizontalAlignment="Left" Height="22" Margin="302,5,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="181" TextChanged="CriterioTextBox_TextChanged"/>
+        <Button x:Name="ConsultarButton" Content="Consultar" HorizontalAlignment="Left" Height="32" Margin="494,1,0,0" VerticalAlignment="Top" Width="183" FontWeight="Bold" Background="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Click="ConsultarButton_Click"/>
+        <ComboBox x:Name="FiltroComboBox" HorizontalAlignment="Left" Height="19" Margin="54,6,0,0" VerticalAlignment="Top" Width="189" >
+            <ComboBoxItem Content="Todo"/>
+            <ComboBoxItem Content="Id"/>
+            <ComboBoxItem Content="Nombre"/>
+            <ComboBoxItem Content="Cédula"/>
+            <ComboBoxItem Content="Dirección"/>
+        </ComboBox>
+        <TextBox x:Name="CriterioTextBox" HorizontalAlignment="Left" Height="22" Margin="302,5,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="181" />
 
 
 
